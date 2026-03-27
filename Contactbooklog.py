@@ -20,3 +20,24 @@ def valid_email(email):
 
 def valid_phone(phone):
     return re.fullmatch(r"\d{10}", phone) is not None
+
+def search_contacts(contacts, keyword):
+    return [c for c in contacts if re.search(keyword, c.name, re.IGNORECASE)]
+
+def save_contacts(contacts):
+    with open("contacts.txt", "w") as f:
+        for c in contacts:
+            f.write(f"{c.name},{c.phone},{c.email}\n")
+
+def load_contacts():
+    contacts = []
+    try:
+        with open("contacts.txt", "r") as f:
+            for line in f:
+                name, phone, email = line.strip().split(",")
+                contacts.append(Contact(name, phone, email))
+    except FileNotFoundError:
+        pass
+    return contacts
+
+    
