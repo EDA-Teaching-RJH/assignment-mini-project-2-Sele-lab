@@ -107,3 +107,25 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+import unittest
+
+
+class TestContacts(unittest.TestCase):
+
+    def test_valid_email(self):
+        self.assertTrue(valid_email("test@gmail.com"))
+
+    def test_invalid_email(self):
+        self.assertFalse(valid_email("bademail"))
+
+    def test_valid_phone(self):
+        self.assertTrue(valid_phone("1234567890"))
+
+    def test_invalid_phone(self):
+        self.assertFalse(valid_phone("123"))
+
+
+if __name__ == "__main__":
+    unittest.main()
