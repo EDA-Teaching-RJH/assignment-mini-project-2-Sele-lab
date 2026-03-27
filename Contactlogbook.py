@@ -42,6 +42,14 @@ def load_contacts():
         pass
     return contacts
 
+def menu():
+    print("\nContact Book")
+    print("1. Add Contact")
+    print("2. View Contacts")
+    print("3. Search Contacts")
+    print("4. Save")
+    print("5. Load")
+    print("6. Exit")
 
 
 
@@ -102,3 +110,24 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+import unittest
+
+
+class TestContacts(unittest.TestCase):
+
+    def test_valid_email(self):
+        self.assertTrue(valid_email("test@gmail.com"))
+
+    def test_invalid_email(self):
+        self.assertFalse(valid_email("bademail"))
+
+    def test_valid_phone(self):
+        self.assertTrue(valid_phone("1234567890"))
+
+    def test_invalid_phone(self):
+        self.assertFalse(valid_phone("123"))
+
+
+if __name__ == "__main__":
+    unittest.main()
