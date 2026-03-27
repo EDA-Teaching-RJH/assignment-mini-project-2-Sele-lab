@@ -90,5 +90,8 @@ def main():
             for c in results:
                 print(c.display())
 
-        
+        elif choice == "4":
+            save_contacts(contacts)
+            print("Saved!")
+
         
