@@ -14,3 +14,9 @@ class FavouriteContact(Contact):
 
 import re
 
+def valid_email(email):
+    return re.fullmatch(r"[^@]+@[^@]+\.[^@]+", email) is not None
+
+
+def valid_phone(phone):
+    return re.fullmatch(r"\d{10}", phone) is not None
