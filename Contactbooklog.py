@@ -49,4 +49,33 @@ def menu():
     print("5. Load")
     print("6. Exit")
 
+def main():
+    contacts = []
+
+    while True:
+        menu()
+        choice = input("Choose: ")
+
+        if choice == "1":
+            name = input("Name: ")
+            phone = input("Phone (10 digits): ")
+            email = input("Email: ")
+
+            if not valid_phone(phone):
+                print("Invalid phone number!")
+                continue
+
+            if not valid_email(email):
+                print("Invalid email!")
+                continue
+
+            fav = input("Favourite? (y/n): ").lower()
+
+            if fav == "y":
+                contact = FavouriteContact(name, phone, email)
+            else:
+                contact = Contact(name, phone, email)
+
+            contacts.append(contact)
+            print("Contact added!")
    
