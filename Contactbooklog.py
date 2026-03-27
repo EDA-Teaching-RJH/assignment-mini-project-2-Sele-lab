@@ -84,4 +84,11 @@ def main():
                 print(c.display())
 
         
-   
+        elif choice == "3":
+            keyword = input("Search name: ")
+            results = search_contacts(contacts, keyword)
+            for c in results:
+                print(c.display())
+
+        
+        
