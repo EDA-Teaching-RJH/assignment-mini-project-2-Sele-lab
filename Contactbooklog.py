@@ -40,4 +40,13 @@ def load_contacts():
         pass
     return contacts
 
-    
+def menu():
+    print("\nContact Book")
+    print("1. Add Contact")
+    print("2. View Contacts")
+    print("3. Search Contacts")
+    print("4. Save")
+    print("5. Load")
+    print("6. Exit")
+
+   
