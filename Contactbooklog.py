@@ -78,4 +78,10 @@ def main():
 
             contacts.append(contact)
             print("Contact added!")
+        
+        elif choice == "2":
+            for c in contacts:
+                print(c.display())
+
+        
    
