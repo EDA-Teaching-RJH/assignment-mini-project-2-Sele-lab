@@ -31,6 +31,19 @@ def save_contacts(contacts):
         for c in contacts:
             f.write(f"{c.name},{c.phone},{c.email}\n")
 
+def load_contacts():
+    contacts = []
+    try:
+        with open("contacts.txt", "r") as f:
+            for line in f:
+                name, phone, email = line.strip().split(",")
+                contacts.append(Contact(name, phone, email))
+    except FileNotFoundError:
+        pass
+    return contacts
+
+
+
 
 def main():
     contacts = []
